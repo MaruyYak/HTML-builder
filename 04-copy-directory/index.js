@@ -5,12 +5,8 @@ const currentFolderPath = path.join(__dirname, 'files');
 const newFolderPath = path.join(__dirname, 'files-copy');
 
 async function copyDirectory() {
-    await fs.rm(newFolderPath, { 
-      recursive: true, force: true 
-    });
-    await fs.mkdir(newFolderPath, { 
-      recursive: true
-    });
+    await fs.rm(newFolderPath, {recursive: true, force: true});
+    await fs.mkdir(newFolderPath, {recursive: true});
 
     const files = await fs.readdir(currentFolderPath);
 
